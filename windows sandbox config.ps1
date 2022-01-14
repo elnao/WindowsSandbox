@@ -4,6 +4,7 @@ $ProgressPreference = 'SilentlyContinue'
 invoke-webrequest https://www.python.org/ftp/python/3.9.7/python-3.9.7-amd64.exe -outfile python_install.exe
 invoke-webrequest https://github.com/DidierStevens/DidierStevensSuite/archive/refs/heads/master.zip -outfile didier_master.zip
 invoke-webrequest https://github.com/danielbohannon/Invoke-Obfuscation/archive/refs/heads/master.zip -OutFile obfuscate_master.zip
+Invoke-WebRequest https://github.com/danielbohannon/Revoke-Obfuscation/archive/refs/heads/master.zip -OutFile revoke_master.zip
 invoke-webrequest https://f001.backblazeb2.com/file/EricZimmermanTools/bstrings.zip -OutFile bstrings.zip
 invoke-webrequest https://f001.backblazeb2.com/file/EricZimmermanTools/EZViewer.zip -OutFile EZViewer.zip
 
@@ -12,17 +13,18 @@ sleep 5
 # Unzip files
 expand-archive .\didier_master.zip .\Dider_tools
 expand-archive .\obfuscate_master.zip .\Obfuscate_tool
+expand-archive .\revoke_master.zip .\Revoke-Obfuscation_tool
 expand-archive .\bstrings.zip .\Zimmerman_tools
 expand-archive .\EZViewer.zip .\Zimmerman_tools
 
 # Install Python 3
 .\python_install.exe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
 
-sleep 15
+sleep 60
 
 # Set Python paths
 $Env:Path += ";c:\program files\python39;c:\program files\python39\scripts"
-#py --version
+py --version
 
 # Upgrade PIP
 py -m pip install --upgrade pip
@@ -30,7 +32,7 @@ py -m pip install --upgrade pip
 # Install Olefile
 py -m pip install olefile
 
-sleep 15
+sleep 30
 
 # Clean up unneeded files.
 remove-item .\python_install.exe
@@ -45,8 +47,14 @@ remove-item .\EZViewer.zip
 #cd C:\Users\WDAGUtilityAccount\Desktop\Zimmerman_Tools
 #start powershell
 
-cd C:\Users\WDAGUtilityAccount\Desktop\Obfuscate_tools\Invoke-Obfuscation-master
+cd C:\Users\WDAGUtilityAccount\Desktop\Obfuscate_tool\Invoke-Obfuscation-master
 Set-ExecutionPolicy bypass
-
 Import-Module ./Invoke-Obfuscation.psd1
 Invoke-Obfuscation
+
+
+# cd C:\Users\WDAGUtilityAccount\Desktop\Revoke-Obfuscation_tool\Revoke-Obfuscation-master
+# Set-ExecutionPolicy bypass
+# Import-Module .\Revoke-Obfuscation.psd1
+# Revoke-Obfuscation
+
