@@ -38,6 +38,7 @@ sleep 30
 remove-item .\python_install.exe
 remove-item .\didier_master.zip
 remove-item .\obfuscate_master.zip
+remove-item .\revoke_master.zip
 remove-item .\bstrings.zip
 remove-item .\EZViewer.zip
 
