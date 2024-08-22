@@ -5,8 +5,8 @@ invoke-webrequest https://www.python.org/ftp/python/3.9.7/python-3.9.7-amd64.exe
 invoke-webrequest https://github.com/DidierStevens/DidierStevensSuite/archive/refs/heads/master.zip -outfile didier_master.zip
 invoke-webrequest https://github.com/danielbohannon/Invoke-Obfuscation/archive/refs/heads/master.zip -OutFile obfuscate_master.zip
 Invoke-WebRequest https://github.com/danielbohannon/Revoke-Obfuscation/archive/refs/heads/master.zip -OutFile revoke_master.zip
-invoke-webrequest https://f001.backblazeb2.com/file/EricZimmermanTools/bstrings.zip -OutFile bstrings.zip
-invoke-webrequest https://f001.backblazeb2.com/file/EricZimmermanTools/EZViewer.zip -OutFile EZViewer.zip
+invoke-webrequest https://download.mikestammer.com/net6/bstrings.zip -OutFile bstrings.zip
+invoke-webrequest https://download.mikestammer.com/net6/EZViewer.zip -OutFile EZViewer.zip
 
 sleep 5
 
@@ -42,20 +42,21 @@ remove-item .\revoke_master.zip
 remove-item .\bstrings.zip
 remove-item .\EZViewer.zip
 
-#cd C:\Users\WDAGUtilityAccount\Desktop\Dider_tools\DidierStevensSuite-master
-#start powershell
+cd C:\Users\WDAGUtilityAccount\Desktop\Dider_tools\DidierStevensSuite-master
+start powershell
 
 #cd C:\Users\WDAGUtilityAccount\Desktop\Zimmerman_Tools
 #start powershell
 
+<#
 cd C:\Users\WDAGUtilityAccount\Desktop\Obfuscate_tool\Invoke-Obfuscation-master
 Set-ExecutionPolicy bypass
 Import-Module ./Invoke-Obfuscation.psd1
 Invoke-Obfuscation
+#>
 
-
-# cd C:\Users\WDAGUtilityAccount\Desktop\Revoke-Obfuscation_tool\Revoke-Obfuscation-master
-# Set-ExecutionPolicy bypass
-# Import-Module .\Revoke-Obfuscation.psd1
-# Revoke-Obfuscation
+cd C:\Users\WDAGUtilityAccount\Desktop\Revoke-Obfuscation_tool\Revoke-Obfuscation-master
+Set-ExecutionPolicy bypass
+Import-Module .\Revoke-Obfuscation.psd1
+Revoke-Obfuscation
 
