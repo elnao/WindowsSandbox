@@ -1,11 +1,12 @@
 $ProgressPreference = 'SilentlyContinue'
+cd desktop
 
 # Download files
 invoke-webrequest https://www.python.org/ftp/python/3.9.7/python-3.9.7-amd64.exe -outfile python_install.exe
 invoke-webrequest https://github.com/DidierStevens/DidierStevensSuite/archive/refs/heads/master.zip -outfile didier_master.zip
 invoke-webrequest https://github.com/danielbohannon/Invoke-Obfuscation/archive/refs/heads/master.zip -OutFile obfuscate_master.zip
 Invoke-WebRequest https://github.com/danielbohannon/Revoke-Obfuscation/archive/refs/heads/master.zip -OutFile revoke_master.zip
-invoke-webrequest https://download.mikestammer.com/net6/bstrings.zip -OutFile bstrings.zip
+invoke-webrequest https://download.mikestammer.com/bstrings.zip -OutFile bstrings.zip
 invoke-webrequest https://download.mikestammer.com/net6/EZViewer.zip -OutFile EZViewer.zip
 
 sleep 5
@@ -43,10 +44,15 @@ remove-item .\bstrings.zip
 remove-item .\EZViewer.zip
 
 cd C:\Users\WDAGUtilityAccount\Desktop\Dider_tools\DidierStevensSuite-master
-start powershell
+write-host -forgroundcolor green "Didier Stevens Tools: https://blog.didierstevens.com/my-software/"
+write-host -foregroundcolor green "OLEDump.py Example Below:"
+write-host -foregroundcolor yellow "python .\oledump.py C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
+start-process powershell
 
-#cd C:\Users\WDAGUtilityAccount\Desktop\Zimmerman_Tools
-#start powershell
+cd C:\Users\WDAGUtilityAccount\Desktop\Zimmerman_Tools
+write-host -foregroundcolor green "BStrings.exe Example Below:"
+write-host -foregroundcolor yellow ".\bstrings.exe C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
+start powershell
 
 <#
 cd C:\Users\WDAGUtilityAccount\Desktop\Obfuscate_tool\Invoke-Obfuscation-master
