@@ -1,5 +1,5 @@
 $ProgressPreference = 'SilentlyContinue'
-cd desktop
+cd C:\Users\WDAGUtilityAccount\Desktop
 
 # Download files
 invoke-webrequest https://www.python.org/ftp/python/3.9.7/python-3.9.7-amd64.exe -outfile python_install.exe
@@ -51,8 +51,8 @@ start-process powershell
 
 cd C:\Users\WDAGUtilityAccount\Desktop\Zimmerman_Tools
 write-host -foregroundcolor green "BStrings.exe Example Below:"
-write-host -foregroundcolor yellow ".\bstrings.exe C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
-start powershell
+write-host -foregroundcolor yellow ".\bstrings.exe -f C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
+start-process powershell
 
 <#
 cd C:\Users\WDAGUtilityAccount\Desktop\Obfuscate_tool\Invoke-Obfuscation-master
@@ -61,8 +61,10 @@ Import-Module ./Invoke-Obfuscation.psd1
 Invoke-Obfuscation
 #>
 
+<#
 cd C:\Users\WDAGUtilityAccount\Desktop\Revoke-Obfuscation_tool\Revoke-Obfuscation-master
 Set-ExecutionPolicy bypass
 Import-Module .\Revoke-Obfuscation.psd1
 Revoke-Obfuscation
+#>
 
