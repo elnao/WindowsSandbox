@@ -54,8 +54,9 @@ write-host -foregroundcolor green "BStrings.exe Example Below:"
 write-host -foregroundcolor yellow ".\bstrings.exe -f C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
 start-process powershell
 
-invoke-webrequest "https://download.mozilla.org/?product=thunderbird-128.1.1esr-SSL&os=win64&lang=en-US" -outfile thunderbird.msi
-# msiexec.exe /i thunderbird.msi
+cd C:\Users\WDAGUtilityAccount\Desktop
+invoke-webrequest "https://download.mozilla.org/?product=thunderbird-128.1.1esr-SSL&os=win64&lang=en-US" -outfile thunderbird.exe
+.\thunderbird.exe /q
 
 <#
 cd C:\Users\WDAGUtilityAccount\Desktop\Obfuscate_tool\Invoke-Obfuscation-master
