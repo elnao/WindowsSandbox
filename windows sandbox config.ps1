@@ -8,6 +8,8 @@ invoke-webrequest https://github.com/danielbohannon/Invoke-Obfuscation/archive/r
 Invoke-WebRequest https://github.com/danielbohannon/Revoke-Obfuscation/archive/refs/heads/master.zip -OutFile revoke_master.zip
 invoke-webrequest https://download.mikestammer.com/bstrings.zip -OutFile bstrings.zip
 invoke-webrequest https://download.mikestammer.com/net6/EZViewer.zip -OutFile EZViewer.zip
+invoke-webrequest https://download.sysinternals.com/files/Sysmon.zip -Outfile Sysmon.zip
+invoke-webreqeust https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export.xml -OutFile Neo23x0-sysmon-config.xml
 
 sleep 5
 
@@ -17,6 +19,7 @@ expand-archive .\obfuscate_master.zip .\Obfuscate_tool
 expand-archive .\revoke_master.zip .\Revoke-Obfuscation_tool
 expand-archive .\bstrings.zip .\Zimmerman_tools
 expand-archive .\EZViewer.zip .\Zimmerman_tools
+expand-archive .\Sysmon.zip .\Sysmon
 
 # Install Python 3
 .\python_install.exe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
@@ -35,6 +38,10 @@ py -m pip install olefile
 
 sleep 30
 
+# Install Sysmon
+move-item -path .\Neo23x0-sysmon-config.xml -destination .\sysmon
+start-process .\sysmon\sysmon.exe -accepteula -i .\sysmon\Neo23x0-sysmon-config.xml
+
 # Clean up unneeded files.
 remove-item .\python_install.exe
 remove-item .\didier_master.zip
@@ -42,6 +49,8 @@ remove-item .\obfuscate_master.zip
 remove-item .\revoke_master.zip
 remove-item .\bstrings.zip
 remove-item .\EZViewer.zip
+remove-item .\Sysmon.zip
+remote-item .\sysmon
 
 cd C:\Users\WDAGUtilityAccount\Desktop\Dider_tools\DidierStevensSuite-master
 write-host -forgroundcolor green "Didier Stevens Tools: https://blog.didierstevens.com/my-software/"
