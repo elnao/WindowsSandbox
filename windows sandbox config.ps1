@@ -50,7 +50,7 @@ remove-item .\revoke_master.zip
 remove-item .\bstrings.zip
 remove-item .\EZViewer.zip
 remove-item .\Sysmon.zip
-remove-item .\sysmon
+remove-item .\sysmon -force
 
 cd C:\Users\WDAGUtilityAccount\Desktop\Dider_tools\DidierStevensSuite-master
 write-host -forgroundcolor green "Didier Stevens Tools: https://blog.didierstevens.com/my-software/"
