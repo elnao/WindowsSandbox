@@ -47,11 +47,18 @@ cd C:\Users\WDAGUtilityAccount\Desktop\Dider_tools\DidierStevensSuite-master
 write-host -forgroundcolor green "Didier Stevens Tools: https://blog.didierstevens.com/my-software/"
 write-host -foregroundcolor green "OLEDump.py Example Below:"
 write-host -foregroundcolor yellow "python .\oledump.py C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
+write-host -foregroundcolor yellow "python .\pdfid.py C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
+write-host ""
 start-process powershell
 
 cd C:\Users\WDAGUtilityAccount\Desktop\Zimmerman_Tools
 write-host -foregroundcolor green "BStrings.exe Example Below:"
 write-host -foregroundcolor yellow ".\bstrings.exe -f C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
+write-host -foregroundcolor yellow ".\bstrings.exe --lr url3986 -f C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
+write-host -foregroundcolor yellow ".\bstrings.exe --lr ipv4 -f C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
+write-host -foregroundcolor yellow ".\bstrings.exe --lr email -f C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
+write-host -foregroundcolor yellow ".\bstrings.exe --lr reg_path -f C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
+write-host ""
 start-process powershell
 
 cd C:\Users\WDAGUtilityAccount\Desktop
