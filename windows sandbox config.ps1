@@ -9,7 +9,7 @@ Invoke-WebRequest https://github.com/danielbohannon/Revoke-Obfuscation/archive/r
 invoke-webrequest https://download.mikestammer.com/bstrings.zip -OutFile bstrings.zip
 invoke-webrequest https://download.mikestammer.com/net6/EZViewer.zip -OutFile EZViewer.zip
 invoke-webrequest https://download.sysinternals.com/files/Sysmon.zip -Outfile Sysmon.zip
-invoke-webreqeust https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export.xml -OutFile Neo23x0-sysmon-config.xml
+invoke-webrequest https://github.com/Neo23x0/sysmon-config/blob/master/sysmonconfig-export.xml -OutFile Neo23x0-sysmon-config.xml
 
 sleep 5
 
