@@ -53,7 +53,8 @@ remove-item .\Sysmon.zip
 remove-item .\sysmon -recurse -force
 
 cd C:\Users\WDAGUtilityAccount\Desktop\Dider_tools\DidierStevensSuite-master
-write-host -forgroundcolor green "Didier Stevens Tools: https://blog.didierstevens.com/my-software/"
+write-host ""
+write-host -foregroundcolor green "Didier Stevens Tools List: https://blog.didierstevens.com/my-software/"
 write-host -foregroundcolor green "OLEDump.py Example Below:"
 write-host -foregroundcolor yellow "python .\oledump.py C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
 write-host -foregroundcolor yellow "python .\pdfid.py C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
