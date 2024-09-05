@@ -73,7 +73,7 @@ start-process powershell
 
 cd C:\Users\WDAGUtilityAccount\Desktop
 invoke-webrequest "https://download.mozilla.org/?product=thunderbird-128.1.1esr-SSL&os=win64&lang=en-US" -outfile thunderbird.exe
-.\thunderbird.exe /q
+.\thunderbird.exe /S
 
 <#
 cd C:\Users\WDAGUtilityAccount\Desktop\Obfuscate_tool\Invoke-Obfuscation-master
