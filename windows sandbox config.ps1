@@ -74,9 +74,18 @@ write-host -foregroundcolor yellow ".\bstrings.exe --lr reg_path -f C:\Users\WDA
 write-host ""
 start-process powershell
 
+# Install Thunderbird
 cd C:\Users\WDAGUtilityAccount\Desktop
 invoke-webrequest "https://download.mozilla.org/?product=thunderbird-128.1.1esr-SSL&os=win64&lang=en-US" -outfile thunderbird.exe
 .\thunderbird.exe /S
+
+# Install .Net 6
+Invoke-webrequest "https://download.visualstudio.microsoft.com/download/pr/61881ecd-a425-4053-a420-7f76586d2f60/6daf1af8c05df332eb1c53261fafc07f/dotnet-sdk-6.0.425-win-x64.exe" -outfile dotnet6.exe
+.\dotnet6.exe /install /quiet /norestart
+
+# Remove Thunderbird and dot net 6 install files
+remove-item .\thunderbird.exe
+remove-item .\dotnet6.exe
 
 <#
 cd C:\Users\WDAGUtilityAccount\Desktop\Obfuscate_tool\Invoke-Obfuscation-master
