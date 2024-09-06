@@ -58,9 +58,13 @@ write-host -foregroundcolor green "Didier Stevens Tools List: https://blog.didie
 write-host -foregroundcolor green "Didier Stevens Tools Example Below:"
 write-host -foregroundcolor yellow "python .\oledump.py C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
 write-host -foregroundcolor yellow "python .\pdfid.py C:\Users\WDAGUtilityAccount\Desktop\Document.pdf"
-write-host -foregroundcolor yellow " Hint: Look for a count greater than 0 in /JS, /JavaScript, and /Launch"
+write-host -foregroundcolor yellow " Hint: Look for a count greater than 0 in /JS, /JavaScript, /Launch, or /OpenAction"
 write-host -foregroundcolor yellow "python .\pdf-parser.py C:\Users\WDAGUtilityAccount\Desktop\Document.pdf"
 write-host -foregroundcolor yellow " Hint: Look for code in the output"
+write-host -foregroundcolor yellow "python .\pdf-parser.py -s javascript C:\Users\WDAGUtilityAccount\Desktop\Document.pdf"
+write-host -foregroundcolor yellow " Hint: above command searches for javascript"
+write-host -foregroundcolor yellow "python .\pdf-parser.py -o <object number> -f C:\Users\WDAGUtilityAccount\Desktop\Document.pdf"
+write-host -foregroundcolor yellow " Hint: above line applies filter to the object you found that contains javascript"
 write-host ""
 start-process powershell
 
