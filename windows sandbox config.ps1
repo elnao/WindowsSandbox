@@ -84,6 +84,7 @@ Invoke-webrequest "https://download.visualstudio.microsoft.com/download/pr/61881
 .\dotnet6.exe /install /quiet /norestart
 
 # Remove Thunderbird and dot net 6 install files
+sleep 120
 remove-item .\thunderbird.exe
 remove-item .\dotnet6.exe
 
