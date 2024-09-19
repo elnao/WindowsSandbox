@@ -100,7 +100,7 @@ write-host -foregroundcolor darkyellow " Hint: above line applies filter to the 
 write-host -foregroundcolor yellow "python .\pdf-parser.py -s uri C:\Users\WDAGUtilityAccount\Desktop\Document.pdf"
 write-host -foregroundcolor darkyellow " Hint: above command searches URLs or email addresses"
 write-host ""
-start-process powershell
+start-process powershell -ArgumentList '-noexit -noprofile -command $host.ui.rawui.windowtitle=\"Didier Tools\"'
 
 cd C:\Users\WDAGUtilityAccount\Desktop\Zimmerman_Tools
 write-host -foregroundcolor green "BStrings.exe Example Below:"
@@ -110,7 +110,7 @@ write-host -foregroundcolor yellow ".\bstrings.exe --lr ipv4 -f C:\Users\WDAGUti
 write-host -foregroundcolor yellow ".\bstrings.exe --lr email -f C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
 write-host -foregroundcolor yellow ".\bstrings.exe --lr reg_path -f C:\Users\WDAGUtilityAccount\Desktop\Document.docx"
 write-host ""
-start-process powershell
+start-process powershell -ArgumentList '-noexit -noprofile -command $host.ui.rawui.windowtitle=\"Zimmerman Tools\"'
 
 if ($internet_access)
 {
